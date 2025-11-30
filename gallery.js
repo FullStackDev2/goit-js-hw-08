@@ -103,15 +103,13 @@ gallery.addEventListener("click", (event) => {
   const largeSrc = event.target.dataset.source;
 
   const forExp = basicLightbox.create(
-    `
-      <img src="${largeSrc}">
-    `,
+    `<img class="modal-image" src="${largeSrc}">`,
     {
       onShow: () => {
         window.addEventListener("keydown", handleKey);
       },
       onClose: () => {
-		window.removeEventListener("keydown", handleKey);
+        window.removeEventListener("keydown", handleKey);
       }
     }
   );
